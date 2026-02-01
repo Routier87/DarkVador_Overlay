@@ -339,3 +339,18 @@ body {
 .username {
     animation: glow 3s infinite;
 }
+
+/* Collez ceci dans votre style.css */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: 
+        /* Étoiles */
+        radial-gradient(1px 1px at 100px 200px, #FFF, transparent),
+        radial-gradient(2px 2px at 300px 400px, #FFF, transparent),
+        /* Death Star */
+        radial-gradient(100px 100px at 80% 20%, #333, transparent);
+    z-index: -1;
+}
