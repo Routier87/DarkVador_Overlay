@@ -1,117 +1,58 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overlay Dark Vador - darkvador_56</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* FOND ÉTOILÉ ANIMÉ */
+        body {
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+                radial-gradient(3px 3px at 120px 50px, #ddd, transparent);
+            background-size: 200px 200px;
+            background-color: #000;
+            animation: stars 100s linear infinite;
+        }
+        
+        @keyframes stars {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+        
+        /* CADRE IMPÉRIAL CSS */
+        .imperial-border {
+            position: absolute;
+            border: 10px solid;
+            border-image: linear-gradient(45deg, #8B0000, #000000, #8B0000) 10;
+            top: 50px; left: 50px; right: 50px; bottom: 50px;
+        }
+        
+        /* LOGO EMPIRE CSS */
+        .empire-logo {
+            width: 150px;
+            height: 150px;
+            background: 
+                radial-gradient(circle at 30% 30%, #8B0000, #000000 70%),
+                repeating-linear-gradient(45deg, transparent, transparent 5px, #8B0000 5px, #8B0000 10px);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .username {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 48px;
+            text-shadow: 0 0 10px red;
+        }
+    </style>
 </head>
 <body>
-    <!-- Fond animé étoiles -->
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-    
-    <!-- Overlay principal -->
-    <div class="overlay-container">
-        
-        <!-- Bannière supérieure avec pseudo -->
-        <div class="top-banner">
-            <div class="imperial-logo">
-                <i class="fas fa-star-of-life"></i>
-            </div>
-            <div class="username-container">
-                <h1 class="username">DARKVADOR_56</h1>
-                <div class="title">SITH LORD STREAMER</div>
-            </div>
-            <div class="imperial-logo">
-                <i class="fas fa-star-of-life"></i>
-            </div>
-        </div>
-        
-        <!-- Cadre de jeu principal -->
-        <div class="main-game-frame">
-            <div class="frame-border top-left"></div>
-            <div class="frame-border top-right"></div>
-            <div class="frame-border bottom-left"></div>
-            <div class="frame-border bottom-right"></div>
-            <div class="scan-line"></div>
-            <!-- Votre jeu apparaîtra ici -->
-        </div>
-        
-        <!-- Cadre webcam -->
-        <div class="webcam-frame">
-            <div class="webcam-title">
-                <i class="fas fa-eye"></i> HOLOCAM
-            </div>
-            <div class="webcam-inner">
-                <!-- Votre webcam dans OBS -->
-            </div>
-            <div class="vader-breath-animation"></div>
-        </div>
-        
-        <!-- Panneau de stats -->
-        <div class="stats-panel">
-            <div class="panel-title">
-                <i class="fas fa-server"></i> IMPERIAL DATABANK
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-label">VIEWERS</div>
-                    <div class="stat-value" id="viewers">0</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">FOLLOWERS</div>
-                    <div class="stat-value" id="followers">0</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">STREAM TIME</div>
-                    <div class="stat-value" id="stream-time">00:00</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">SUB GOAL</div>
-                    <div class="stat-value" id="sub-goal">0/50</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Panneau d'alertes -->
-        <div class="alerts-panel">
-            <div class="panel-title">
-                <i class="fas fa-bell"></i> IMPERIAL ALERTS
-            </div>
-            <div class="alerts-container" id="alerts-container">
-                <!-- Les alertes apparaîtront ici -->
-            </div>
-        </div>
-        
-        <!-- Barre inférieure -->
-        <div class="bottom-bar">
-            <div class="social-links">
-                <i class="fab fa-twitter"></i> @darkvador_56
-                <span class="separator">|</span>
-                <i class="fab fa-discord"></i> discord.gg/empire
-                <span class="separator">|</span>
-                <i class="fab fa-youtube"></i> DarkVador56
-            </div>
-            <div class="current-game" id="current-game">
-                <i class="fas fa-gamepad"></i> STAR WARS: JEDI FALLEN ORDER
-            </div>
-        </div>
-        
-        <!-- Effet Lightsaber (pour transitions) -->
-        <div class="lightsaber" id="lightsaber">
-            <div class="blade"></div>
-            <div class="hilt"></div>
-        </div>
-    </div>
-    
-    <!-- Sons -->
-    <audio id="transition-sound" src="sounds/transition_imperial.mp3" preload="auto"></audio>
-    <audio id="lightsaber-sound" src="sounds/lightsaber_on.mp3" preload="auto"></audio>
-    <audio id="breath-sound" src="sounds/vader_breath.mp3" preload="auto"></audio>
-    
-    <script src="script.js"></script>
+    <div class="imperial-border"></div>
+    <div class="empire-logo"></div>
+    <div class="username">DARKVADOR_56</div>
 </body>
 </html>
